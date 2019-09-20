@@ -72,6 +72,7 @@ export class ProfileUserComponent implements OnInit {
   }
 
   OnConvert() {
+    this.notification = false;
     this.convert = true;
   }
 
@@ -87,7 +88,7 @@ export class ProfileUserComponent implements OnInit {
           // Tạo form đem vào service login để lấy token mới
           this.loginForm = this.formBuilder.group({
             username: [data.username, Validators.required],
-            password: [this.oldPasword, Validators.required]
+            password: [this.oldPasword, Validators.required, Validators.minLength(6)]
           });
           // Lấy lại token mới
           this.authService.authenticate(this.loginForm.value).subscribe(
@@ -116,7 +117,7 @@ export class ProfileUserComponent implements OnInit {
           // Tạo form đem vào service login để lấy token mới
           this.loginForm = this.formBuilder.group({
             username: [data.username, Validators.required],
-            password: [this.oldPasword, Validators.required]
+            password: [this.oldPasword, Validators.required, Validators.minLength(6)]
           });
           // Lấy lại token mới
           this.authService.authenticate(this.loginForm.value).subscribe(

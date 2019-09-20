@@ -1,10 +1,7 @@
 <header id="header">
   <a class="logo" href="/api/owner"><img src="../../../../assets/images/logo_transparent.png" alt="Logo"></a>
-  <div *ngIf="!(notification)">
+  <div>
     <div><b style="font-size: 40px; color: white"><i>Mind Sicker</i> </b></div>
-  </div>
-  <div *ngIf="(notification)">
-    <div><b style="font-size: 40px; color: white"><i>Cập nhật thông tin thành công</i> </b></div>
   </div>
   <nav>
     <button class="btn btn-outline-primary" routerLink="">Đăng xuất</button>
@@ -41,8 +38,12 @@
               <label class="col">
                 Mật khẩu mới:
                 <input type="password" class="form-control" [(ngModel)]="newPassword" formControlName="password">
+                <div *ngIf="registerForm.get('pwGroup').get('password').errors?.minlength">
+                  Mật khẩu tối thiếu 6 ký tự!
+                </div>
               </label>
             </div>
+
             <div class="form-group row">
               <label class="col">
                 Xác nhận mật khẩu mới:
@@ -103,4 +104,9 @@
       </div>
     </div>
   </div>
+  <div style="top: 500px"></div>
+  <div *ngIf="(notification)">
+    <div style="text-align: center;"><b style="font-size: 40px; color: white"><i style=" color: black">Cập nhật thông tin thành công</i> </b></div>
+  </div>
 </div>
+
