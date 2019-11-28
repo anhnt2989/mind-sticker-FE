@@ -26,11 +26,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DetailSidenavComponent} from './component/detail/detail-sidenav/detail-sidenav.component';
 import {DetailListComponent} from './component/detail/detail-list/detail-list.component';
 import {DetailMainBodyComponent} from './component/detail/detail-main-body/detail-main-body.component';
-import {environment} from '../environments/environment';
-import { UploadFileComponent } from './component/upload-file/upload-file.component';
 import {AuthInterceptorsService} from './auth/auth-interceptors.service';
 import {Router, RouterModule} from '@angular/router';
 import { ProfileUserComponent } from './component/profile-user/profile-user.component';
+import {environment} from '../environments/environment';
+import {UploadFileComponent} from './component/upload-file/upload-file.component';
 
 @NgModule({
   declarations: [
